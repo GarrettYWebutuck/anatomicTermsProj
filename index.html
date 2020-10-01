@@ -11,8 +11,20 @@
 		
 		</canvas>
 		<script id="backgroundScript">
+			function toRadians(degrees){
+				let radians = (degrees*Math.PI)/180;
+				return radians;
+			}
+			
 			const canvas = document.querySelector("canvas");
 			const ctx = canvas.getContext("2d");
+			
+			class Circle{
+				constructor(){
+					this.radius;
+					
+				}
+			}
 		</script>
 	</body>
 </html>

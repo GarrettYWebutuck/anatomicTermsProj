@@ -20,10 +20,23 @@
 			const ctx = canvas.getContext("2d");
 			
 			class Circle{
-				constructor(){
-					this.radius;
-					
+				constructor(x, y, radius){
+					this.radius = radius;
+					this.x = x;
+					this.y = y;
 				}
+				draw(){
+					ctx.fillStyle = "black";
+					ctx.strokeStyle = "blue";
+					ctx.arc(this.x, this.y, this.radius, 0, 2*Math.PI);
+					ctx.fill();
+					ctx.stroke();
+				}
+			}
+			var circle = new Circle(50,50,25);
+			function loop(){
+				ctx.clearRect(0,0,canvas.width,canvas.height);
+				circle.draw();
 			}
 		</script>
 	</body>

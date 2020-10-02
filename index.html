@@ -37,7 +37,9 @@
 			function loop(){
 				ctx.clearRect(0,0,canvas.width,canvas.height);
 				circle.draw();
+				window.requestAnimationFrame(loop);
 			}
+			loop();
 		</script>
 	</body>
 </html>

@@ -65,6 +65,7 @@
 				let x = Math.random()*canvas.width;
 				let y = Math.random()*canvas.height;
 				let r = Math.random()*50;
+				if(r < 15) r = 15;
 				let dx = 2;
 				circleArr.push(new Circle(x, y, r, dx, 0));
 			}

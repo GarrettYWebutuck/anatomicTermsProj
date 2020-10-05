@@ -38,6 +38,7 @@
 					this.dy = dy;
 				}
 				draw(){
+					ctx.beginPath();
 					ctx.fillStyle = "rgba(75,245,145,0.5)";
 					ctx.strokeStyle = "rgba(0,178,70,0.5)";
 					ctx.arc(this.x, this.y, this.radius, 0, 2*Math.PI);

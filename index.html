@@ -39,8 +39,8 @@
 				}
 				draw(){
 					ctx.beginPath();
-					ctx.fillStyle = "rgb(100,25,0)";
-					ctx.strokeStyle = "rgb(100,50,0)";
+					ctx.fillStyle = "rgb(120,0,0)";
+					ctx.strokeStyle = "rgb(100,0,0)";
 					ctx.arc(this.x, this.y, this.radius, 0, 2*Math.PI);
 					ctx.fill();
 					ctx.stroke();
@@ -48,7 +48,7 @@
 				update(){
 					this.x += this.dx;
 					this.y += this.dy;
-					if(this.x > canvas.width){
+					if(this.x - this.radius > canvas.width){
 						this.x = 0 - (this.radius*2);
 					}
 					this.draw();

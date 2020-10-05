@@ -12,6 +12,10 @@
 		<canvas id="canvas">
 		
 		</canvas>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script id="GUILogic">
+		
+		</script>
 		<script id="backgroundScript">
 			function toRadians(degrees){
 				let radians = (degrees*Math.PI)/180;
@@ -19,13 +23,19 @@
 			}
 			
 			const canvas = document.querySelector("canvas");
+			canvas.width = 100%;
+			canvas.height = 100%;
 			const ctx = canvas.getContext("2d");
 			
+			var circleArr = [];
+			
 			class Circle{
-				constructor(x, y, radius){
+				constructor(x, y, radius, dx, dy){
 					this.radius = radius;
 					this.x = x;
 					this.y = y;
+					this.dx = dx;
+					this.dy = dy;
 				}
 				draw(){
 					ctx.fillStyle = "rgba(75,245,145,0.5)";
@@ -34,11 +44,27 @@
 					ctx.fill();
 					ctx.stroke();
 				}
+				update(){
+					this.x += this.dx;
+					this.y += this.dy;
+					if(this.x > canvas.width){
+						this.x = 0 - (this.radius*2);
+					}
+					draw();
+				}
 			}
-			var circle = new Circle(50,50,25);
+			for(let i=0;i<100;i++){
+				let x = Math.random()*canvas.width;
+				let y = Math.random()*canvas.height;
+				let r = Math.random()*50;
+				let dx = 10;
+				circleArr.push(new Circle(x, y, r, dx, 0));
+			}
 			function loop(){
 				ctx.clearRect(0,0,canvas.width,canvas.height);
-				circle.draw();
+				for(let i=0;i<circleArr.length;i++){
+					circleArr[i].update();
+				}
 				window.requestAnimationFrame(loop);
 			}
 			loop();

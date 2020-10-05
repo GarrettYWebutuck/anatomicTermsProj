@@ -4,7 +4,7 @@
 		<title>Anatomical Terms</title>
 		<style>
 			canvas{
-				background-color:black;
+				background-color:rgb(174,44,44);
 			}
 		</style>
 	</head>
@@ -44,6 +44,10 @@
 					ctx.arc(this.x, this.y, this.radius, 0, 2*Math.PI);
 					ctx.fill();
 					ctx.stroke();
+					ctx.beginPath();
+					ctx.fillStyle = "rgb(150,0,0)";
+					ctx.arc(this.x, this.y, this.radius*0.75 , 0, 2*Math.PI);
+					ctx.fill();
 				}
 				update(){
 					this.x += this.dx;

@@ -13,12 +13,12 @@
 				margin:0;
 			}
 			#toggleSwitch{
-				width:30px;
-				height: 15px;
+				width:36px;
+				height: 30px;
 				float:right;
 				border:2px solid black;
 				border-radius:5px 5px 5px 5px;
-				color:red;
+				background-color:gray;
 				top:10px;
 			}
 		</style>
@@ -32,6 +32,22 @@
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script id="GUILogic">
+			//var dec
+			var autoSlide = false;
+			//function dec
+			function toggle(){
+				if($("#toggleSwitch").css("color") == "rgb(128,128,128)"){
+					$("#toggleSwitch").css({
+						"background-color":"lime"; 
+					});
+					autoSlide = true;
+				}else if($("#toggleSwitch").css("color") == "rgb(0,255,0)"){
+					$("#toggleSwitch").css({
+						"background-color":"gray"; 
+					});
+					autoSlide = false;
+				}
+			}
 			//auto-slides
 			//manual control
 		</script>

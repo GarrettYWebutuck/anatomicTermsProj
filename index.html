@@ -38,20 +38,33 @@
 			var autoSlide = false;
 			//function dec
 			function toggle(){
-				if($("#toggleSwitch").css("color") == "rgb(128,128,128)"){
+				if(!autoSlide){
 					$("#toggleSwitch").css({
 						"background-color":"lime", 
 					});
 					autoSlide = true;
-				}else if($("#toggleSwitch").css("color") == "rgb(0,255,0)"){
+				}else if(autoSlide){
 					$("#toggleSwitch").css({
 						"background-color":"gray",
 					});
 					autoSlide = false;
 				}
 			}
+			function nextSlide(){
+			
+			}
 			//auto-slides
+			setInterval(function(){
+				if(autoSlide){
+					nextSlide();
+				}
+			},20000);
 			//manual control
+			window.addEventListener("click",function(){
+				if(!autoSlide){
+					nextSlide();
+				}
+			});
 		</script>
 		<script id="backgroundScript">
 			function toRadians(degrees){

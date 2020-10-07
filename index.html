@@ -37,6 +37,7 @@
 		<script id="GUILogic">
 			//var dec
 			var autoSlide = false;
+			var currentSlide = 1;
 			//function dec
 			function toggle(){
 				if(!autoSlide){
@@ -52,7 +53,18 @@
 				}
 			}
 			function nextSlide(){
-			
+				currentSlide++;
+				if(currentSlide > 11){
+					currentSlide = 1;
+				}
+				$(".slide").css({
+					"display":"none",
+				});
+				let slideID = "#slide" + currentSlide;
+				$(slideID).css({
+					"display":"block",
+				});
+				console.log(currentSlide);
 			}
 			//auto-slides
 			setInterval(function(){

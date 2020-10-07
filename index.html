@@ -26,6 +26,17 @@
 				text-decoration:none;
 				float:right;
 			}
+			.slide{
+				background-color:black;
+				height:75%;
+				width:90%;
+				display:none;
+				position:absolute;
+				margin:auto;
+			}
+			#slide1{
+				display:block;
+			}
 		</style>
 	</head>
 	<body>
@@ -33,6 +44,7 @@
 		
 		</canvas>
 		<a href="#" id="toggleClick">Auto:<div id="toggleSwitch" onclick="toggle()"></div></a>
+		<div class="slide" id="slide1"></div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script id="GUILogic">
 			//var dec
